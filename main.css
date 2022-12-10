@@ -1,0 +1,219 @@
+:root{
+    --light: #eee;
+    --grey: #979797;
+    --lightgrey: #c5c5c5;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Fira sans', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #555555;
+}
+
+header{
+    padding: 2rem 3rem;
+    width: 98%;
+    border-radius: 8px;
+    border:2px solid var(--lightgrey);
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--lightgrey);
+}
+
+header h1{
+    font-size: 2rem;
+    font-weight: 300;
+}
+main h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 2.8rem;
+}
+
+#controller-form{
+    display: flex;
+}
+
+input, button{
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    text-align: center;
+    background-color: var(--light);
+    font-size: 20px;
+    padding: 20px 20px;
+    cursor: pointer;
+    border:2px solid var(--grey);
+
+}
+
+#turn-on-button{
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+#turn-on-button:hover{
+    background-color: var(--grey);
+    color: var(--light);
+}
+
+section.dpad{
+    padding: 2rem 2rem;
+    max-width: 800px;
+    width: 310px;
+    border-radius: 8px;
+    border:2px solid var(--lightgrey);
+    margin-left: 1rem;
+}
+section.video-feed{
+    padding: 2rem 2rem;
+    max-width: 2000px;
+    width: 80.5%;
+    border-radius: 8px;
+    border:2px solid var(--lightgrey);
+    margin-left: 22rem;
+    margin-right: 1rem;
+}
+
+#up-button{
+    height: 70px;
+    width: 70px;
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+}
+#up-button:hover{
+    background-color: var(--grey);
+    color: var(--light);
+}
+#left-button{
+    height: 70px;
+    width: 70px;
+}
+#left-button:hover{
+    background-color: var(--grey);
+    color: var(--light);
+}
+#right-button{
+    height: 70px;
+    width: 70px;
+    margin-left: 5.5rem;
+    margin-bottom: 1rem;
+}
+#right-button:hover{
+    background-color: var(--grey);
+    color: var(--light);
+}
+#down-button{
+    height: 70px;
+    width: 70px;
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+}
+#down-button:hover{
+    background-color: var(--grey);
+    color: var(--light);
+}
+
+.light-label{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 5.4rem;
+}
+
+.video-label{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 2rem;
+}
+
+.switch {
+    position: relative;
+    margin-top: 1rem;
+    margin-left: 4.3rem;
+    display: inline-block;
+    width: 90px;
+    height: 34px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #974b4b;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #57a05c;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #4377a1;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(55px);
+    -ms-transform: translateX(55px);
+    transform: translateX(55px);
+  }
+  
+  /*------ ADDED CSS ---------*/
+  .on
+  {
+    display: none;
+  }
+  
+  .on, .off
+  {
+    color: white;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+  }
+  
+  input:checked+ .slider .on
+  {display: block;}
+  
+  input:checked + .slider .off
+  {display: none;}
+  
+  /*--------- END --------*/
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;}
