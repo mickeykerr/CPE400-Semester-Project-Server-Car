@@ -1,24 +1,54 @@
-'''
-Control the Brightness of LED using PWM on Raspberry Pi
-http://www.electronicwings.com
-'''
-
+#!/usr/bin/env python
 import RPi.GPIO as GPIO
-from time import sleep
+import time
+import sys
 
-ledpin = 12				# PWM pin connected to LED
-GPIO.setwarnings(False)			#disable warnings
-GPIO.setmode(GPIO.BOARD)		#set pin numbering system
-GPIO.setup(ledpin,GPIO.OUT)
-pi_pwm = GPIO.PWM(ledpin,1000)		#create PWM instance with frequency
-pi_pwm.start(0)				#start PWM of required Duty Cycle 
-while True:
-    for duty in range(0,101,1):
-        pi_pwm.ChangeDutyCycle(duty) #provide duty cycle in the range 0-100
-        sleep(0.01)
-    sleep(0.5)
-    
-    for duty in range(100,-1,-1):
-        pi_pwm.ChangeDutyCycle(duty)
-        sleep(0.01)
-    sleep(0.5)
+print(str(sys.argv))
+#LED ON option is 0
+if(sys.argv[1] == 0)
+	GPIO.setmode(GPIO.BCM)
+
+	GPIO.setup(2, GPIO.OUT)
+
+	GPIO.output(2, True)
+
+	time.sleep(5)
+
+	GPIO.output(2, False)
+
+#Left Option
+if(sys.argv[1] == 1)
+	GPIO.setmode(GPIO.BCM)
+
+	GPIO.setup(5, GPIO.OUT)
+
+	GPIO.output(5, True)
+
+	time.sleep(5)
+
+	GPIO.output(5, False)
+	
+#Right Option
+if(sys.argv[1] == 2)
+	GPIO.setmode(GPIO.BCM)
+
+	GPIO.setup(6, GPIO.OUT)
+
+	GPIO.output(6, True)
+
+	time.sleep(5)
+
+	GPIO.output(6, False)
+	
+#Left Option
+if(sys.argv[1] == 3)
+	GPIO.setmode(GPIO.BCM)
+
+	GPIO.setup(7, GPIO.OUT)
+
+	GPIO.output(7, True)
+
+	time.sleep(5)
+
+	GPIO.output(7, False)
+GPIO.cleanup()
