@@ -89,19 +89,31 @@
 
     
 </body>
+
+<!--
+PHP script to handle POST requests from client. 
+POST requests are send to the servocontrol.py script and led.py script with arguments depending on the intended functionality.
+-->
 <?php
+//reset the servo to the center, then actuate motor
 if(isset($_POST["up"])) {
   shell_exec('/var/www/html/scripts/servocontrol.py mid > /dev/null 2>/dev/null &');
 }
+//turns servo to left, then actuate motor
 if(isset($_POST["left"])) {
   shell_exec('/var/www/html/scripts/servocontrol.py left > /dev/null 2>/dev/null &');
 }
+//turn servo to right, then actuate motor
 if(isset($_POST["right"])) {
   $result=shell_exec('/var/www/html/scripts/servocontrol.py right > /dev/null 2>/dev/null &');
 }
+	
+//turn on LED connected to car
 if(isset($_POST["on"])) {
   shell_exec('/var/www/html/scripts/led.py ledon > /dev/null 2>/dev/null &');
 }
+	
+//turn off LED connected to car
 if(isset($_POST["off"])) {
   shell_exec('/var/www/html/scripts/led.py ledoff > /dev/null 2>/dev/null &');
 }
