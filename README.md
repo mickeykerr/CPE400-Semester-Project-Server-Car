@@ -21,6 +21,9 @@ Below is the software that was utilized in this project. These libraries are req
 - Python 3
 - Raspbian OS
 
+#Notes
+All scripts for this project that were utilized for testing purposed can be found in the testscripts folder. All scripts for this project that were utilized in the actual project can be found in the scripts folder. The base folder is the html/php forms and scripts that pass information to the python scripts in scripts.
+
 # How this works
 This project works by first allowing individuals to access the webpage through the utilization of port forwarding through a router. Once the router handles this request, they are connected to the Apache2 web server running on the Raspberry Pi. On this webserver, there are four buttons, and a simple livestream. Pressing any of the buttons on this web server allows the user to make a POST request over the server. PHP gets this POST request, and runs the relevant python script on a seperate thread to allow the live stream to continue. The python scripts run the car itself, allowing it to go forward, left, and right.
 
