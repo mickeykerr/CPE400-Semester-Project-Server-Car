@@ -1,7 +1,14 @@
+/* 
+Kyle Knotek
+2022
+*/
+
 :root{
     --light: #eee;
     --grey: #979797;
     --lightgrey: #c5c5c5;
+    --green: #98d481;
+    --red: #c47d74;
 }
 
 *{
@@ -19,12 +26,10 @@ body{
 
 header{
     padding: 2rem 3rem;
-    width: 98%;
-    border-radius: 8px;
+    width: auto;
+    border-radius: 15px;
     border:2px solid var(--lightgrey);
-    margin-left: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
     background-color: var(--lightgrey);
 }
 
@@ -37,7 +42,7 @@ main h2{
     font-weight: 300;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    margin-left: 2.8rem;
+    margin-left: 3.2rem;
 }
 
 #controller-form{
@@ -45,7 +50,7 @@ main h2{
 }
 
 input, button{
-    border-radius: 8px;
+    border-radius: 15px;
     transition-duration: 0.4s;
     text-align: center;
     background-color: var(--light);
@@ -69,24 +74,25 @@ section.dpad{
     padding: 2rem 2rem;
     max-width: 800px;
     width: 310px;
-    border-radius: 8px;
+    border-radius: 15px;
     border:2px solid var(--lightgrey);
-    margin-left: 1rem;
+    margin: 1rem;
+    
 }
 section.video-feed{
     padding: 2rem 2rem;
     max-width: 2000px;
-    width: 80.5%;
-    border-radius: 8px;
+    width: auto;
+    border-radius: 15px;
     border:2px solid var(--lightgrey);
-    margin-left: 22rem;
-    margin-right: 1rem;
+    margin: 1rem;
+    display: flex;
 }
 
 #up-button{
     height: 70px;
     width: 70px;
-    margin-left: 5rem;
+    margin-left: 5.4rem;
     margin-bottom: 1rem;
 }
 #up-button:hover{
@@ -104,19 +110,14 @@ section.video-feed{
 #right-button{
     height: 70px;
     width: 70px;
-    margin-left: 5.5rem;
-    margin-bottom: 1rem;
+    margin-left: 6rem;
+    margin-bottom: 3rem;
 }
 #right-button:hover{
     background-color: var(--grey);
     color: var(--light);
 }
-#down-button{
-    height: 70px;
-    width: 70px;
-    margin-left: 5rem;
-    margin-bottom: 3rem;
-}
+
 #down-button:hover{
     background-color: var(--grey);
     color: var(--light);
@@ -126,8 +127,7 @@ section.video-feed{
     font-size: 1.5rem;
     font-weight: 300;
     margin-top: 1rem;
-    margin-bottom: 2rem;
-    margin-left: 5.4rem;
+    margin-left: 5.8rem;
 }
 
 .video-label{
@@ -136,84 +136,34 @@ section.video-feed{
     margin-top: 2rem;
 }
 
-.switch {
-    position: relative;
+#on-button{
+    height: 40px;
+    width: 100px;
+    margin: auto;
     margin-top: 1rem;
-    margin-left: 4.3rem;
-    display: inline-block;
-    width: 90px;
-    height: 34px;
-  }
-  
-  .switch input {display:none;}
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #974b4b;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #57a05c;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #4377a1;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(55px);
-    -ms-transform: translateX(55px);
-    transform: translateX(55px);
-  }
-  
-  /*------ ADDED CSS ---------*/
-  .on
-  {
-    display: none;
-  }
-  
-  .on, .off
-  {
-    color: white;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    font-size: 10px;
-    font-family: Verdana, sans-serif;
-  }
-  
-  input:checked+ .slider .on
-  {display: block;}
-  
-  input:checked + .slider .off
-  {display: none;}
-  
-  /*--------- END --------*/
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;}
+    align-items: center;
+    justify-content: center;
+    padding-bottom:2.1rem;
+    font-size: 1rem;
+    background-color: var(--green);
+    border: none;
+}
+
+#off-button{
+    height: 50px;
+    width: 100px;
+    margin: auto;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding-bottom:2.1rem;
+    font-size: 1rem;
+    background-color: var(--red);
+    border:none;
+}
+
+.switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

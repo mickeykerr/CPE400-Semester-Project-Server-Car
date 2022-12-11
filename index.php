@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!-- 	
+	Frontend Done by Kyle Knotek. 
+	PHP scripting done by Michael Kerr.
+	2022 
+-->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,25 +54,23 @@
                 value=">"
                 name="right">
             </div>
-            <div>
-                <input 
-                type="submit"
-                id="down-button" 
-                value="v"
-                name="down">
-            </div>
             
             <div>
                 <span class = "light-label">Light</span>
             </div>
             <div>     
-                <label class="switch">
-                    <input type="checkbox" id="togBtn">
-                    <div class="slider round">
-                     <span class="on">ON</span>
-                     <span class="off">OFF</span>
-                    </div>
-                   </label>
+            <label class="switch">
+                    <input 
+                    type="submit"
+                    id="on-button" 
+                    value="ON"
+                    name="on">
+                    <input 
+                    type="submit"
+                    id="off-button" 
+                    value="OFF"
+                    name="off">
+                </label>
             </div>
 </form>
 
@@ -87,7 +91,7 @@
 </body>
 <?php
 if(isset($_POST["up"])) {
-  shell_exec('/var/www/html/scripts/motorcontrol.py > /dev/null 2>/dev/null &');
+  shell_exec('/var/www/html/scripts/servocontrol.py mid > /dev/null 2>/dev/null &');
 }
 if(isset($_POST["left"])) {
   shell_exec('/var/www/html/scripts/servocontrol.py left > /dev/null 2>/dev/null &');
@@ -95,8 +99,11 @@ if(isset($_POST["left"])) {
 if(isset($_POST["right"])) {
   $result=shell_exec('/var/www/html/scripts/servocontrol.py right > /dev/null 2>/dev/null &');
 }
-if(isset($_POST["down"])) {
-  shell_exec('/home/raspberry/ledtest.py down > /dev/null 2>/dev/null &');
+if(isset($_POST["on"])) {
+  shell_exec('/var/www/html/scripts/led.py ledon > /dev/null 2>/dev/null &');
+}
+if(isset($_POST["off"])) {
+  shell_exec('/var/www/html/scripts/led.py ledoff > /dev/null 2>/dev/null &');
 }
 ?>
 </html>

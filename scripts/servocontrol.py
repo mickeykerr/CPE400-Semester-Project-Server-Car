@@ -21,18 +21,28 @@ pwn_min = 1000
 motor_pwm.start(0)#start PWM of required Duty Cycle
 steer_pwm.start(0)
 
-if sys.argv[1] == "right":
+if sys.argv[1] == "left":
 	steer_pwm.ChangeDutyCycle(1)
-	sleep(0.5)
+	sleep(1)
+	for duty in range(0,101,1):
+		motor_pwm.ChangeDutyCycle(duty)
+		sleep(.02)
+
+
 	#for duty in range(100,-1,-1):
     
 	#	print(duty)
 	#	steer_pwm.ChangeDutyCycle(duty)
 	#	sleep(1)
 		
-if sys.argv[1] == "left":
+if sys.argv[1] == "right":
 	steer_pwm.ChangeDutyCycle(10)
-	sleep(0.5)
+	sleep(1)
+	for duty in range(0,101,1):
+		motor_pwm.ChangeDutyCycle(duty)
+		sleep(.02)
+
+
 	#for duty in range(0,101,1):
     #
 	#	print(duty)
@@ -42,4 +52,6 @@ if sys.argv[1] == "left":
 if sys.argv[1] == "mid":
 	steer_pwm.ChangeDutyCycle(7)
 	sleep(0.5)
-	
+	for duty in range(0,101,1):
+		motor_pwm.ChangeDutyCycle(duty)
+		sleep(.02)
