@@ -80,7 +80,7 @@
                 <span class = "video-label">Video Feed</span>
             </div>
             <div>
-                <iframe src="http://71.93.65.129:8000/stream.mjpg" height="480" width="640">
+                <iframe src="http://some-ip:8000/stream.mjpg" height="480" width="640">
                 </iframe> 
             </div>
         </section>
