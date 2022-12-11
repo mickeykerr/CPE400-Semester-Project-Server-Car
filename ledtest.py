@@ -4,17 +4,17 @@ import time
 import sys
 
 print(str(sys.argv))
-#Up option is 0
+#LED ON option is 0
 if(sys.argv[1] == 0)
 	GPIO.setmode(GPIO.BCM)
 
-	GPIO.setup(4, GPIO.OUT)
+	GPIO.setup(2, GPIO.OUT)
 
-	GPIO.output(4, True)
+	GPIO.output(2, True)
 
 	time.sleep(5)
 
-	GPIO.output(4, False)
+	GPIO.output(2, False)
 
 #Left Option
 if(sys.argv[1] == 1)

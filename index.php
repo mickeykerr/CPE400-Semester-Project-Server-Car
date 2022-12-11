@@ -87,13 +87,13 @@
 </body>
 <?php
 if(isset($_POST["up"])) {
-  shell_exec('/home/raspberry/ledtest.py up > /dev/null 2>/dev/null &');
+  shell_exec('/var/www/html/scripts/motorcontrol.py > /dev/null 2>/dev/null &');
 }
 if(isset($_POST["left"])) {
-  shell_exec('/home/raspberry/ledtest.py left > /dev/null 2>/dev/null &');
+  shell_exec('/var/www/html/scripts/servocontrol.py left > /dev/null 2>/dev/null &');
 }
 if(isset($_POST["right"])) {
-  $result=shell_exec('/home/raspberry/ledtest.py right > /dev/null 2>/dev/null &');
+  $result=shell_exec('/var/www/html/scripts/servocontrol.py right > /dev/null 2>/dev/null &');
 }
 if(isset($_POST["down"])) {
   shell_exec('/home/raspberry/ledtest.py down > /dev/null 2>/dev/null &');
