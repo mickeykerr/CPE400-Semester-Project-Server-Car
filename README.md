@@ -13,6 +13,7 @@ Below is a list of components required for this project.
 - Jumper Wires
 - [Pi Camera](https://www.amazon.com/Arducam-Megapixels-Sensor-OV5647-Raspberry/dp/B012V1HEP4/ref=sr_1_3?crid=2LCJ4FVP3UYML&keywords=pi%2Bcamera&qid=1670718974&s=electronics&sprefix=pi%2Bcamera%2Celectronics%2C174&sr=1-3&th=1)
 - Router with Port Forwarding Capabilities
+- [Motor Controller](https://www.amazon.com/Traxxas-3024R-Electric-Speed-Control/dp/B0089X4PBU)
 
 # Required Software
 Below is the software that was utilized in this project. These libraries are required to replicate functionality, and are all installed directly to the Raspberry Pi.
