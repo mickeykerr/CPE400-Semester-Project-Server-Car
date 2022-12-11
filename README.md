@@ -21,10 +21,10 @@ Below is the software that was utilized in this project. These libraries are req
 - Python 3
 - Raspbian OS
 
-#Notes
+# Notes
 All scripts for this project that were utilized for testing purposed can be found in the testscripts folder. All scripts for this project that were utilized in the actual project can be found in the scripts folder. The base folder is the html/php forms and scripts that pass information to the python scripts in scripts.
 
-#Note for graders
+# Note for graders
 Should you test this system from the ground up, you will notice that the video feed seems to not be working. This can be easily remedied by replacing some-ip with your public IP address.
 
 # How this works
