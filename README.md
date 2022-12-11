@@ -24,10 +24,13 @@ Below is the software that was utilized in this project. These libraries are req
 #Notes
 All scripts for this project that were utilized for testing purposed can be found in the testscripts folder. All scripts for this project that were utilized in the actual project can be found in the scripts folder. The base folder is the html/php forms and scripts that pass information to the python scripts in scripts.
 
+#Note for graders
+Should you test this system from the ground up, you will notice that the video feed seems to not be working. This can be easily remedied by replacing some-ip with your public IP address.
+
 # How this works
 This project works by first allowing individuals to access the webpage through the utilization of port forwarding through a router. Once the router handles this request, they are connected to the Apache2 web server running on the Raspberry Pi. On this webserver, there are four buttons, and a simple livestream. Pressing any of the buttons on this web server allows the user to make a POST request over the server. PHP gets this POST request, and runs the relevant python script on a seperate thread to allow the live stream to continue. The python scripts run the car itself, allowing it to go forward, left, and right.
 
-The live stream runs on a seperate Flask instance running on the raspberry pi, which works by pulling individual .jpg files, and sending those frames to port 8000. These are then turned into .mjpg files, which are sent to the Flask server. This stream can seen individually if the user navigates to  `http://webserver-ip:8000/stream.mjpg`.
+The live stream runs on a seperate Flask instance running on the raspberry pi, which works by pulling individual .jpg files, and sending those frames to port 8000. These are then turned into .mjpg files, which are sent to the Flask server. This stream can seen individually if the user navigates to  `http://webserver-public-ip:8000/stream.mjpg`.
 
 # Directions to Replicate functionality.
 This guide assumes that you are super cool and have already set up WiFi over your local network. If you haven't, a guide can be found [here](https://www.seeedstudio.com/blog/2021/01/25/three-methods-to-configure-raspberry-pi-wifi/).
