@@ -1,7 +1,7 @@
 #code from picamera documentation at picamera.readthedocs.op/en/latest/recipes2.html#webstreaming
 #used for educational purposes as well as interface knowledge. Comments have been created by Michael Kerr
 #in an effort to further understand the HTTP protocols being used in this code. Code has also been modified
-#in an effort to make it more accessible
+#in an effort to make it more accessible to other pieces of code in the software.
 
 import io
 import picamera
@@ -21,7 +21,7 @@ PAGE="""\
 </body>
 </html>
 """
-
+#Streaming output class.
 class StreamingOutput(object):
     def __init__(self):
         self.frame = None
@@ -39,6 +39,8 @@ class StreamingOutput(object):
             self.buffer.seek(0)
         return self.buffer.write(buf)
 
+#Streaming handler class. Creates individual .jpg framesm and then puts them together to create an .mjpg file. These individual
+#.jpg frames are sent to the client, who essentially waits for a new one. This process repeats until the server goes down.
 class StreamingHandler(server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/stream.mjpg':
@@ -67,10 +69,12 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_error(404)
             self.end_headers()
 
+#server itself            
 class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
     daemon_threads = True
 
+#picamera input. Picamera will pull frames of 640x480 at 24 frames a second, and send it to a the webserver on port 8000.
 with picamera.PiCamera(resolution='640x480', framerate=24) as camera:
     broadcasting = True
     output = StreamingOutput()
