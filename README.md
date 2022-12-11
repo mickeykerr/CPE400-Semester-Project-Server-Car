@@ -68,3 +68,7 @@ This guide assumes that you are super cool and have already set up WiFi over you
 15. Once functionality is confirmed, delete index.php, and clone this repository into `/var/html/www`. Be sure to allow all python scripts to be executed by anyone.
 
 16. Enter index.php, and on line 79, change the `some-ip` in `<iframe src="http://some-ip:8000/stream.mjpg` to your IP.
+
+17. Add the following line to `rc.local` on the Raspberry Pi, in order to run the web stream on startup. You can find `rc.local` by running `sudo nano /etc/rc.local`.
+
+`python3 /var/www/html/scripts/cam_test.py &`
