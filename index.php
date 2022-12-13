@@ -80,6 +80,7 @@
                 <span class = "video-label">Video Feed</span>
             </div>
             <div>
+		<!-- Replace some-ip with public IP address web server is running on -->
                 <iframe src="http://some-ip:8000/stream.mjpg" height="480" width="640">
                 </iframe> 
             </div>
